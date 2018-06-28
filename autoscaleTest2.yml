@@ -22,4 +22,4 @@ spec:
             memory: "1Gi"
             cpu: "700m"
       nodeSelector:
-cjeType: agent
+        cjeType: agent
