@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: autoscaleTest
+  name: autoscale-test
   namespace: jenkins-agents
 spec:
   replicas: 1
   selector:
     matchLabels:
-      run: autoscaleTest
+      run: autoscale-test
   template:
     metadata:
       labels:
-        run: autoscaleTest
+        run: autoscale-test
     spec:
       containers:
       - name: reserve-resources-1
