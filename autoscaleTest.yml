@@ -13,12 +13,13 @@ spec:
       labels:
         run: autoscale-test
     spec:
+      priorityClassName: default-priority
       containers:
       - name: reserve-resources-1
         image: k8s.gcr.io/pause
         resources:
           requests:
-            memory: "2Gi"
-            cpu: "850m"
+            memory: "1.5Gi"
+            cpu: "800m"
       nodeSelector:
         cjeType: agent
