@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autoscale-test-2
+  namespace: jenkins-agents
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: autoscale-test-2
+  template:
+    metadata:
+      labels:
+        run: autoscale-test-2
+    spec:
+      priorityClassName: default-priority
+      containers:
+      - name: reserve-resources-1
+        image: k8s.gcr.io/pause
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "700m"
+      nodeSelector:
+cjeType: agent
