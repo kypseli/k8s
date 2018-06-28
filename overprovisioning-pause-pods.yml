@@ -21,3 +21,5 @@ spec:
           requests:
             memory: "1Gi"
             cpu: "500m"
+      nodeSelector:
+        cjeType: agent
