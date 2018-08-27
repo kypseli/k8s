@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: jenkins-agent-limit-range
+  namespace: jenkins-agents
+spec:
+  limits:
+  - type: Pod
+    max:
+      cpu: 4
+      memory: 4Gi
+  - type: Container
+    max:
+      cpu: 2
+      memory: 2Gi
+    default:
+      cpu: 1
+      memory: 1Gi
+    defaultRequest:
+      cpu: 0.25
+      memory: 250Mi
