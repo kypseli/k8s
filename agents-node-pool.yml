@@ -1,0 +1,19 @@
+apiVersion: kops/v1alpha2
+kind: InstanceGroup
+metadata:
+  creationTimestamp: 2018-04-25T18:57:15Z
+  labels:
+    kops.k8s.io/cluster: k8s.beedemo.net
+  name: agentnodes
+spec:
+  image: kope.io/k8s-1.8-debian-jessie-amd64-hvm-ebs-2018-02-08
+  machineType: m4.xlarge
+  maxPrice: "0.15"
+  maxSize: 10
+  minSize: 1
+  nodeLabels:
+    cjeType: agent
+    kops.k8s.io/instancegroup: agentnodes
+  role: Node
+  subnets:
+  - us-east-1b
